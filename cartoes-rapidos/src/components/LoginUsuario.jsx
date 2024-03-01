@@ -1,0 +1,61 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import './LoginUsuario.css';
+import { Link } from 'react-router-dom';
+
+const LoginUsuario = () => {
+  const [loginData, setLoginData] = useState({
+    email: '',
+    senha: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData({ ...loginData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post('http://localhost:8081/usuario/login', loginData);
+      console.log('Login bem-sucedido!');
+    } catch (error) {
+      console.error('Erro ao efetuar login:', error);
+    }
+  };
+
+  return (
+    <div className="login-container">
+      <form onSubmit={handleSubmit}>
+        <label className="login-label">
+          Email:
+          <input
+            type="text"
+            name="email"
+            value={loginData.email}
+            onChange={handleChange}
+            className="login-input"
+          />
+        </label>
+        <label className="login-label">
+          Senha:
+          <input
+            type="password"
+            name="senha"
+            value={loginData.senha}
+            onChange={handleChange}
+            className="login-input"
+          />
+        </label>
+        <div className='div-button'>
+        <button type="submit" className="login-button">Entrar</button>
+        <Link to="/cadastro" className="cadastro-link">Cadastre-se</Link>
+      </div>
+
+      </form>
+    </div>
+  );
+};
+
+export default LoginUsuario;
