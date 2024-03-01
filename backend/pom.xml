@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.upe.garanhuns.alexa</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>alexa-skill</name>
 	<description>API da skill da Alexa Cartões Rápidas</description>
