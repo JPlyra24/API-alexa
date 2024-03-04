@@ -6,7 +6,7 @@ export const Cadastro = () => {
     return(
      <div>
         <div className='imageDiv'>
-            <img className='image' src={Logo} alt="Logo Cartões Rápidos"
+            <img className='imageCadastro' src={Logo} alt="Logo Cartões Rápidos"
             width={150}/>
         </div>
             <UserRegistrationForm/>

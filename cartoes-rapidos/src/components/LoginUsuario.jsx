@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './LoginUsuario.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const LoginUsuario = () => {
+  const navigate = useNavigate();
+
   const [loginData, setLoginData] = useState({
     email: '',
     senha: '',
@@ -20,7 +23,8 @@ const LoginUsuario = () => {
     try {
       await axios.post('http://localhost:8081/usuario/login', loginData);
       console.log('Login bem-sucedido!');
-    } catch (error) {
+      navigate('/home');
+     } catch (error) {
       console.error('Erro ao efetuar login:', error);
     }
   };

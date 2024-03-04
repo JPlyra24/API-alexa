@@ -44,4 +44,10 @@ body {
 
   .cadastro-link{
     float: inline-end;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+  .cadastro-link:hover {
+    color: #0193C2;
   }

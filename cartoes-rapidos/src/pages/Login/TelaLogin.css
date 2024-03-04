@@ -3,7 +3,6 @@ body {
     padding: 0;
     max-width: 100%;
     font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff;
   }
 
 .container {
@@ -16,6 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
 }
 
 
@@ -26,10 +26,13 @@ body {
     align-items: center;
     padding-bottom: 135px;
 }
-.image{
-    padding: 75px 50px 50px 50px;
-    max-width: 50%;
-    max-height: 50%;
+.imageLogin{
+    padding-top: 75px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    max-width: 55%;
+    max-height: 55%;
     height: auto;
   }
 
@@ -72,8 +75,8 @@ body {
     width: 75%;
     height: auto;
     animation: slideUp 2s ease-in-out;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin-bottom: 40px;
+    margin-left: 100px;
 }
 
 .message-image2 {
@@ -82,5 +85,5 @@ body {
     max-height: 100%;
     animation: slideUp 2s ease-in-out;
     margin-bottom: 50px;
-    margin-right: 20px;
+    margin-right: 100px;
 }

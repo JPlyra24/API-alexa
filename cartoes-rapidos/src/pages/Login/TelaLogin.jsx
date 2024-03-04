@@ -15,7 +15,7 @@ export const TelaLogin = () => {
             </div>
             <div className='divLogin'>
                 <div className="divImage">
-                    <img className='image' src={Logo} alt="Logo Cartões Rápidos" width={150} />
+                    <img className='imageLogin' src={Logo} alt="Logo Cartões Rápidos" />
                 </div>
                 <div className="login">
                     <LoginUsuario />
