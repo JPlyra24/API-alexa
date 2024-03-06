@@ -32,7 +32,7 @@ const FormPergunta = () => {
 
   return (
     <div>
-      <h2>Formulário de Perguntas</h2>
+      <h2>Novo Cartão</h2>
       <form onSubmit={handleSubmit} >
         <label>
           Tema:
