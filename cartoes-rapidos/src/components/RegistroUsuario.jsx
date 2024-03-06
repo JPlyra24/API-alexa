@@ -77,7 +77,7 @@ import { useNavigate } from 'react-router-dom';
               className="form-input"
             />
           </label>
-          <div className='div-button'>
+          <div className='div-registro-button'>
             <button type="submit" className="form-button">Cadastrar</button>
           </div>
         </form>
