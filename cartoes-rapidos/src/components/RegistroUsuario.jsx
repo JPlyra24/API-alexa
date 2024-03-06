@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import './RegistroUsuario.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ import { useNavigate } from 'react-router-dom';
       e.preventDefault();
   
       try {
-        await axios.post('http://localhost:8081/usuario/cadastro', userData);
+        await api.post('/usuario/cadastro', userData);
         console.log('Cadastro realizado com sucesso!');
         navigate('/');
       } catch (error) {

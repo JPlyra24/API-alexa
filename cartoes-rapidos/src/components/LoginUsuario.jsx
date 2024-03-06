@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import './LoginUsuario.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -21,10 +21,10 @@ const LoginUsuario = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8081/usuario/login', loginData);
+      await api.post('/usuario/login', loginData);
       console.log('Login bem-sucedido!');
-      navigate('/home');
-     } catch (error) {
+      navigate('/home')
+    } catch (error) {
       console.error('Erro ao efetuar login:', error);
     }
   };
@@ -33,7 +33,7 @@ const LoginUsuario = () => {
     <div className="login-container">
       <form onSubmit={handleSubmit}>
         <label className="login-label">
-          Email:
+          E-mail:
           <input
             type="text"
             name="email"
