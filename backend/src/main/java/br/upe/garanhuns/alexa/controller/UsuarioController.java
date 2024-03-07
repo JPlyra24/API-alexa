@@ -9,12 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import br.upe.garanhuns.alexa.model.dto.AuthUsuarioDTO;
 import br.upe.garanhuns.alexa.model.dto.LoginDTO;
 import br.upe.garanhuns.alexa.model.dto.UsuarioDTO;
@@ -24,6 +19,7 @@ import br.upe.garanhuns.alexa.repository.UsuarioRepository;
 import jakarta.validation.Valid;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class UsuarioController {
 
   @Autowired
