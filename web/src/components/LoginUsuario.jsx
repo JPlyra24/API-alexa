@@ -30,6 +30,7 @@ const LoginUsuario = () => {
       navigate('/home')
     } catch (error) {
       console.error('Erro ao efetuar login:', error);
+      window.alert('E-mail ou senha incorretos');
     }
   };
 

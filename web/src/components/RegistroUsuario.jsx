@@ -23,9 +23,11 @@ import { useNavigate } from 'react-router-dom';
       try {
         await api.post('/usuario/cadastro', userData);
         console.log('Cadastro realizado com sucesso!');
+        window.alert('Cadastro realizado com sucesso!');
         navigate('/');
       } catch (error) {
         console.error('Erro ao cadastrar usuário:', error);
+        window.alert('Erro ao cadastrar usuário');
       }
     };
   
