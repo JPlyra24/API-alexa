@@ -8,11 +8,14 @@
   }
   
   .card-header {
-    background-color: #0193C2;
+    background-color: #0193c2;
     color: #fff;
     padding: 8px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+  
   
   .card-body {
     padding-left: 8px;
@@ -25,4 +28,15 @@
   
   .resposta {
     font-weight: lighter;
+  }
+
+  .delete-button {
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .delete-button:hover{
+    color: #FF0000;
   }

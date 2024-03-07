@@ -25,6 +25,23 @@ const Perguntas = () => {
     fetchPerguntas();
   }, []);
 
+  const handleDelete = async (idPergunta) => {
+    try {
+      const token = localStorage.getItem('token');
+      await api.delete(`/quiz/${idPergunta}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      // Atualize a lista de perguntas após a exclusão
+      setPerguntas((prevPerguntas) =>
+        prevPerguntas.filter((pergunta) => pergunta.idPergunta !== idPergunta)
+      );
+    } catch (error) {
+      console.error('Erro ao excluir pergunta:', error);
+    }
+  };
+
   return (
     <div className="perguntas-existentes">
       <h2>Meus Cartões</h2>
@@ -35,6 +52,7 @@ const Perguntas = () => {
             nome={pergunta.nome}
             pergunta={pergunta.pergunta}
             resposta={pergunta.resposta}
+            onDelete={() => handleDelete(pergunta.idPergunta)}
           />
         ))}
       </div>
