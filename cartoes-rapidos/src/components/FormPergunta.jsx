@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import './FormPergunta.css'
+import api from '../services/api';
+import './FormPergunta.css';
 
 const FormPergunta = () => {
   const [perguntaData, setPerguntaData] = useState({
@@ -11,34 +11,33 @@ const FormPergunta = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setPerguntaData({ ...perguntaData, [name]: value });
+    setPerguntaData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      
-      await axios.post('http://localhost:8081/quiz', perguntaData);
+      await api.post('/quiz', perguntaData);
       console.log('Pergunta cadastrada com sucesso!');
-
-      
       setPerguntaData({ nome: '', pergunta: '', resposta: '' });
     } catch (error) {
       console.error('Erro ao cadastrar pergunta:', error);
-      
     }
   };
 
   return (
     <div>
       <h2>Novo Cartão</h2>
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit}>
         <label>
           Tema:
           <input
             type="text"
-            name="Tag"
+            name="nome"
             value={perguntaData.nome}
             onChange={handleChange}
             className='pergunta-input'

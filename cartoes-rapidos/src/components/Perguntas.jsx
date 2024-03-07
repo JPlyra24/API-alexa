@@ -29,7 +29,12 @@ const Perguntas = () => {
       <h2>Meus Cartões</h2>
       <div className="cards-container">
         {perguntas.map((pergunta) => (
-          <CardPergunta key={pergunta.idPergunta} pergunta={pergunta} />
+          <CardPergunta
+            key={pergunta.idPergunta}
+            nome={pergunta.nome}
+            pergunta={pergunta.pergunta}
+            resposta={pergunta.resposta}
+          />
         ))}
       </div>
     </div>

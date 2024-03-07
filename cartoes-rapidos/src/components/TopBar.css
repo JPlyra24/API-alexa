@@ -19,8 +19,12 @@
     align-items: center;
   }
   
-  .logout-button svg {
-    margin-left: 5px;
+  .logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #333;
   }
 
   .logout-button:hover {
